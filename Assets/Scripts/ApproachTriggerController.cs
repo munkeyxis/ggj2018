@@ -15,4 +15,9 @@ public class ApproachTriggerController : MonoBehaviour {
         // start lights
 
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switchButton.gameObject.SetActive(false);
+    }
 }
