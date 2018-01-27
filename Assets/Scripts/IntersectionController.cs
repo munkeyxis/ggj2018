@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class IntersectionController : MonoBehaviour {
 
@@ -8,8 +6,6 @@ public class IntersectionController : MonoBehaviour {
 	public int right_target_num;
 
 	private bool going_right;
-
-
 
 	// Use this for initialization
 	void Start () {
