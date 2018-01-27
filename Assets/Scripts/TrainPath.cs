@@ -15,6 +15,7 @@ public class TrainPath : MonoBehaviour {
 	public bool power_time;
 
     private Vector3 targetPosition;
+    private Vector3 nextSegmentTargetPosition;
 
 	void Awake () {
         targetPosition = initialTarget.position;
@@ -35,6 +36,11 @@ public class TrainPath : MonoBehaviour {
 
         if (moving == true)
         {
+            if(transform.position == targetPosition)
+            {
+                targetPosition = nextSegmentTargetPosition;
+            }
+
             Vector2 pos = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
         }
@@ -52,7 +58,8 @@ public class TrainPath : MonoBehaviour {
 
 		if(other.GetComponent<IntersectionController>()){
 			targetPosition = other.GetComponent<IntersectionController>().GetNextTarget();
-		}
+            nextSegmentTargetPosition = other.GetComponent<IntersectionController>().GetNextSegmentTarget();
+        }
 	}
 
 

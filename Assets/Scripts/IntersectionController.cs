@@ -28,6 +28,18 @@ public class IntersectionController : MonoBehaviour {
 		return nextTarget;
 	}
 
+    public Vector3 GetNextSegmentTarget()
+    {
+        TargetOptions targetOptions = left_target.GetComponent<TargetOptions>();
+
+        if(going_right)
+        {
+            targetOptions = right_target.GetComponent<TargetOptions>();
+        }
+       
+        return targetOptions.GetNextSegmentTargetPos();
+    }
+
     public void ToggleTarget()
     {
         going_right = !going_right;

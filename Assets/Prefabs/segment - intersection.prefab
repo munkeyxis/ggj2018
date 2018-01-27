@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4233668361454618}
   - component: {fileID: 212151541623507328}
+  - component: {fileID: 114678355103170348}
   m_Layer: 0
   m_Name: right target
   m_TagString: Untagged
@@ -66,6 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4368211802987018}
+  - component: {fileID: 114320952679543434}
   m_Layer: 0
   m_Name: segment - intersection
   m_TagString: Untagged
@@ -194,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4384283956714650}
   - component: {fileID: 212115504446383448}
+  - component: {fileID: 114700499883833426}
   m_Layer: 0
   m_Name: left target
   m_TagString: Untagged
@@ -553,6 +556,30 @@ MonoBehaviour:
   left_target: {fileID: 4384283956714650}
   right_target: {fileID: 4233668361454618}
   signalLightsController: {fileID: 114701681412843666}
+--- !u!114 &114320952679543434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328613458660376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9072669330bf35f4784a9a028e1a34d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTarget: {fileID: 4736469977433572}
+--- !u!114 &114678355103170348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1042679991368858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c23b3f5752393d4aa9971095c3079ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSegment: {fileID: 0}
 --- !u!114 &114699590891540232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -566,6 +593,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intersectionController: {fileID: 114306950107845884}
   switchButton: {fileID: 0}
+--- !u!114 &114700499883833426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784637502670056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c23b3f5752393d4aa9971095c3079ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSegment: {fileID: 0}
 --- !u!114 &114701681412843666
 MonoBehaviour:
   m_ObjectHideFlags: 1
