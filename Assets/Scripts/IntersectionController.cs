@@ -2,8 +2,11 @@
 
 public class IntersectionController : MonoBehaviour {
 
-	public int left_target_num;
-	public int right_target_num;
+	public Transform left_target;
+	public Transform right_target;
+
+    private Vector3 leftTargetPos;
+    private Vector3 rightTargetPos;
 
 	private bool going_right;
 
@@ -13,11 +16,13 @@ public class IntersectionController : MonoBehaviour {
 		int going_right_num;
 		going_right_num = Random.Range(0,1);
 		going_right = going_right_num == 0 ? false : true;
+        leftTargetPos = left_target.position;
+        rightTargetPos = right_target.position;
 	}
 	
-	public int GetNextTarget(){
+	public Vector3 GetNextTarget(){
 
-		int nextTarget = going_right ? right_target_num : left_target_num;
+		Vector3 nextTarget = going_right ? rightTargetPos : leftTargetPos;
 		return nextTarget;
 	}
 
