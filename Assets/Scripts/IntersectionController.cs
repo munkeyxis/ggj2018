@@ -21,4 +21,9 @@ public class IntersectionController : MonoBehaviour {
 		return nextTarget;
 	}
 
+    public void ToggleTarget()
+    {
+        going_right = !going_right;
+    }
+
 }
