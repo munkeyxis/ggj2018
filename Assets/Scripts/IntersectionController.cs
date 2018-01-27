@@ -24,6 +24,7 @@ public class IntersectionController : MonoBehaviour {
     public void ToggleTarget()
     {
         going_right = !going_right;
+        Debug.Log("Going right? " + going_right);
     }
 
 }

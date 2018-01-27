@@ -10,7 +10,7 @@ public class ApproachTriggerController : MonoBehaviour {
     {
 
         switchButton.gameObject.SetActive(true);
-        // tell button to talk to me
+        switchButton.GetComponent<SwitchButtonController>().SetIntersectionController(intersectionController);
         // start sound
         // start lights
 
