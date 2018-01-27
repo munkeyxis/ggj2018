@@ -21,7 +21,8 @@ public class IntersectionController : MonoBehaviour {
 	
 	public int GetNextTarget(){
 
-		return going_right ? right_target_num : left_target_num;
+		int nextTarget = going_right ? right_target_num : left_target_num;
+		return nextTarget;
 	}
 
 }

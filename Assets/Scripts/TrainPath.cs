@@ -66,7 +66,7 @@ public class TrainPath : MonoBehaviour {
 					current += 1;
 				}
 
-				if(transform.position == target[3].position && direction_right == false){
+				/*if(transform.position == target[3].position && direction_right == false){
 					current = 4;
 				}else if(transform.position == target[3].position && direction_right == true){
 					current = 8;
@@ -100,7 +100,7 @@ public class TrainPath : MonoBehaviour {
 					current = 46;
 				}else if(transform.position == target[26].position && direction_right == true){
 					current = 49;
-				}
+				}*/
 
 			}else {
 				
@@ -132,6 +132,13 @@ public class TrainPath : MonoBehaviour {
 
 		if(moving == false && Input.GetKeyDown(KeyCode.Space)){
 			moving = true;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+
+		if(other.GetComponent<IntersectionController>()){
+			current = other.GetComponent<IntersectionController>().GetNextTarget();
 		}
 	}
 
