@@ -13,7 +13,7 @@ public class TrainPath : MonoBehaviour {
 	public Text left_text;
 	public Text right_text;
 
-	public int current;
+	public static int current;
 
 	public bool direction_right;
 	public bool moving;
