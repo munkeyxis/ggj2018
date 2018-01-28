@@ -21,7 +21,7 @@ public class TrainPath : MonoBehaviour {
     private bool launchTrain;
     private bool trainLaunched;
 
-	void Awake () {
+	void Start () {
         targetGameObject = initialTarget;
 		moving = false;
         launchTrain = false;
