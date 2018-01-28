@@ -416,6 +416,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39e6ca00a23d2d4f930d3d2ee461d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &514310964
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.9752793
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 50.6913
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.21875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314468078255976, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e2c3fa6bb56fea845b47114c3b2e6b0e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &576392430 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114320952679543434, guid: fc2694ad67085c44296af87e1a1f3669,
