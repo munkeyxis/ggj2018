@@ -13,6 +13,9 @@ public class TrainPath : MonoBehaviour {
 
 	public bool moving;
 	public bool power_time;
+	public bool train_sound_bool;
+
+	public AudioClip steam_train;
 
     private GameObject targetGameObject;
 
@@ -20,6 +23,7 @@ public class TrainPath : MonoBehaviour {
         targetGameObject = initialTarget;
 		moving = false;
 		power_time = false;
+		train_sound_bool = false;
 	}
 
     void Update()
@@ -35,6 +39,14 @@ public class TrainPath : MonoBehaviour {
 
         if (moving == true)
         {
+        	if(train_sound_bool == false && speed > 0){
+
+        		GetComponent<AudioSource>().clip = steam_train;
+				GetComponent<AudioSource>().Play();
+				train_sound_bool = true;
+        	}
+        	
+
             if(transform.position == targetGameObject.transform.position)
             {
                 targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
