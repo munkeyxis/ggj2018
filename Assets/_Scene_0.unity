@@ -1144,7 +1144,7 @@ MonoBehaviour:
   moving: 0
   power_time: 0
   train_sound_bool: 0
-  steam_train: {fileID: 0}
+  steam_train: {fileID: 8300000, guid: ab5823d0a776e4f93ac211580f0b772a, type: 3}
 --- !u!4 &845705229
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,9 +1294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18b79f4c116440fc95efe83b03a89a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
   power_gauge: {fileID: 2038731031}
   gauge_background: {fileID: 2097846483}
+  electric_current_sound: {fileID: 8300000, guid: 91c967a5ed98040c0be81d127deca8c5,
+    type: 3}
   power_up_time: 0
 --- !u!1001 &854788587
 Prefab:
