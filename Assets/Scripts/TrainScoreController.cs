@@ -13,13 +13,39 @@ public class TrainScoreController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // check which zone i've entered
-            // based on zone, set bool to true
+        if (collision.GetComponent<ScoreZoneController>())
+        {
+            switch (collision.GetComponent<ScoreZoneController>().zoneSize)
+            {
+                case ZoneSize.large:
+                    inLargeZone = true;
+                    break;
+                case ZoneSize.medium:
+                    inMediumZone = true;
+                    break;
+                case ZoneSize.small:
+                    inSmallZone = true;
+                    break;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // check which zone i've entered
-            // based on zone, set bool to false
+        if (collision.GetComponent<ScoreZoneController>())
+        {
+            switch (collision.GetComponent<ScoreZoneController>().zoneSize)
+            {
+                case ZoneSize.large:
+                    inLargeZone = false;
+                    break;
+                case ZoneSize.medium:
+                    inMediumZone = false;
+                    break;
+                case ZoneSize.small:
+                    inSmallZone = false;
+                    break;
+            }
+        }
     }
 }
