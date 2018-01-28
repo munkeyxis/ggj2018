@@ -9,8 +9,7 @@ public class TrainManager : MonoBehaviour {
     public GameObject initialTarget;
     public GameObject mainCamera;
     public GameObject activeTrain { get; private set; }
-    private List<GameObject> trains;
-    
+    public List<GameObject> trains { get; private set; }
 
     private void Awake()
     {

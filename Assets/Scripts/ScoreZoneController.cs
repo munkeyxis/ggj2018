@@ -6,6 +6,7 @@ public class ScoreZoneController : MonoBehaviour {
 
 public enum ZoneSize
 {
+    none,
     small,
     medium,
     large
