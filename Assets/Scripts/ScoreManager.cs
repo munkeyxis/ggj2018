@@ -6,7 +6,6 @@ public class ScoreManager : MonoBehaviour {
     private int player1Score;
     public Text player2ScoreText;
     private int player2Score;
-    public ScoreZoneController scoreZoneController;
 
 	void Start () {
         player1Score = 0;

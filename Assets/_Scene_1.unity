@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSegment: {fileID: 0}
   noTarget: 1
+  isPlayer1: 0
 --- !u!212 &111712222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,48 +205,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &145184762
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -34.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4163526089536046, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 639c99d79aeb9a7438256b7774d79148, type: 2}
-  m_IsPrefabParent: 0
 --- !u!224 &246556616 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224365509169425054, guid: 2bb2677735b740c46a4c67a06b6f8825,
@@ -792,6 +751,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1448212566}
+--- !u!1001 &1476025434
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 52.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846129946964306, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5ecc5c212d503d44092eb45c9426036a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1504079988
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSegment: {fileID: 0}
   noTarget: 1
+  isPlayer1: 0
 --- !u!212 &1504079991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1271,7 +1273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1825762399
 MonoBehaviour:
@@ -1297,7 +1299,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1ScoreText: {fileID: 1790517382}
   player2ScoreText: {fileID: 1432322630}
-  scoreZoneController: {fileID: 0}
 --- !u!1 &1852740140
 GameObject:
   m_ObjectHideFlags: 0
