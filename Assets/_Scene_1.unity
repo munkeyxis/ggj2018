@@ -302,6 +302,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endTarget: {fileID: 111712219}
+--- !u!1001 &623538379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382720292549304, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &776016217
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825762398}
   - component: {fileID: 1825762397}
+  - component: {fileID: 1825762399}
   m_Layer: 0
   m_Name: Global Managers
   m_TagString: Untagged
@@ -924,6 +967,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825762399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1825762396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b129a0de147bb4d936b041ece1fdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852740140
 GameObject:
   m_ObjectHideFlags: 0
