@@ -53,7 +53,8 @@ public class PowerGaugeController : MonoBehaviour {
 
 			power_gauge.fillAmount += 0.7f * Time.deltaTime;
 		}
-		else if(power_up_time == true && power_gauge.fillAmount >= 1){
+		else if(power_up_time == true && power_gauge.fillAmount >= 1)
+		{
 
 			power_up_time = false;
 			power_gauge.gameObject.SetActive(false);

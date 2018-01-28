@@ -43,7 +43,8 @@ public class TrainPath : MonoBehaviour {
 
         if (moving == true)
         {
-        	if(train_sound_bool == false && speed > 0){
+        	if(train_sound_bool == false && speed > 0)
+        	{
 
         		GetComponent<AudioSource>().clip = steam_train;
 				GetComponent<AudioSource>().Play();
