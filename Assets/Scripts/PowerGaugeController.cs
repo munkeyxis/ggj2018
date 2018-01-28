@@ -3,30 +3,35 @@ using UnityEngine.UI;
 
 public class PowerGaugeController : MonoBehaviour {
 
-
 	public Image power_gauge;
-	public Image gauge_background;
+
 
 	public AudioClip electric_current_sound;
 
 	public bool power_up_time;
+	public bool power_click;
+
 	private bool power_up_sound;
 
 	private TrainPath trainPath;
+
 
 	void Start() 
 	{
 
 		power_up_time = false;
 		power_up_sound = false;
+		power_click = false;
+
 	}
 	
 	void Update() 
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && power_up_time == false)
+		if(power_click == true && power_up_time == false)
 		{
 
 			power_up_time = true;
+			Debug.Log("Power click is" + power_click);
 
 			if(power_up_sound == false)
 			{
@@ -35,9 +40,11 @@ public class PowerGaugeController : MonoBehaviour {
 				power_up_sound = true;
 			}
 		}
-		else if(Input.GetKeyDown(KeyCode.Space) && power_up_time == true && trainPath.moving == false)
+
+		if(power_click == false && power_up_time == true)
 		{
 
+			Debug.Log("Now Power click is" + power_click);
 			power_up_time = false;
 			trainPath.power = power_gauge.fillAmount * 50;
 			gameObject.SetActive(false);

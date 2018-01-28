@@ -9,6 +9,7 @@ public class TrainManager : MonoBehaviour {
     public GameObject initialTarget;
     public GameObject mainCamera;
     public GameObject activeTrain { get; private set; }
+    public GameObject powerControl;
     private List<GameObject> trains;
     
 
@@ -21,11 +22,14 @@ public class TrainManager : MonoBehaviour {
 
     private void SetupNewTrain()
     {
+
         GameObject train = Instantiate(trainPrefab);
+        TrainPath trainPath = train.GetComponent<TrainPath>();
         train.transform.position = startTarget.transform.position;
-        train.GetComponent<TrainPath>().initialTarget = initialTarget;
+        trainPath.initialTarget = initialTarget;
         activeTrain = train;
         trains.Add(train);
+        powerControl.GetComponent<PowerGaugeController>().ActivePowerGauge(trainPath);
     }
 
     private void ResetTrainList()
