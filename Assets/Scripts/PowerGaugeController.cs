@@ -12,23 +12,20 @@ public class PowerGaugeController : MonoBehaviour {
 	public bool power_up_time;
 	private bool power_up_sound;
 
-	TrainPath trainPath;
+	private TrainPath trainPath;
 
 	void Start() 
 	{
 
 		power_up_time = false;
 		power_up_sound = false;
-		trainPath = this.GetComponent<TrainPath>();
 	}
 	
 	void Update() 
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && power_up_time == false && trainPath.moving == false)
+		if(Input.GetKeyDown(KeyCode.Space) && power_up_time == false)
 		{
 
-			power_gauge.gameObject.SetActive(true);
-			gauge_background.gameObject.SetActive(true);
 			power_up_time = true;
 
 			if(power_up_sound == false)
@@ -42,10 +39,10 @@ public class PowerGaugeController : MonoBehaviour {
 		{
 
 			power_up_time = false;
-			power_gauge.gameObject.SetActive(false);
-			gauge_background.gameObject.SetActive(false);
 			trainPath.power = power_gauge.fillAmount * 50;
-			trainPath.moving = true;
+			gameObject.SetActive(false);
+			
+			
 		}
 
 		if(power_up_time == true && power_gauge.fillAmount < 1)
@@ -57,11 +54,17 @@ public class PowerGaugeController : MonoBehaviour {
 		{
 
 			power_up_time = false;
-			power_gauge.gameObject.SetActive(false);
-			gauge_background.gameObject.SetActive(false);
 			trainPath.power = power_gauge.fillAmount * 50;
-			trainPath.moving = true;
+			gameObject.SetActive(false);
+			
+			
 		}
 
+	}
+
+	public void ActivePowerGauge(TrainPath train)
+	{
+		trainPath = train;
+		gameObject.SetActive(true);
 	}
 }

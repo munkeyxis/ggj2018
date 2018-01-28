@@ -8,7 +8,7 @@ public class TrainManager : MonoBehaviour {
     public GameObject startTarget;
     public GameObject initialTarget;
     public GameObject mainCamera;
-    private GameObject activeTrain;
+    public GameObject activeTrain { get; private set; }
     private List<GameObject> trains;
     
 
