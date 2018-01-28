@@ -11,12 +11,14 @@ public class TrainManager : MonoBehaviour {
     public GameObject activeTrain { get; private set; }
     public GameObject powerControl;
     public List<GameObject> trains { get; private set; }
+    private bool waitingToStart;
 
     private void Awake()
     {
+        waitingToStart = true;
         ResetTrainList();
         SetupNewTrain();
-        LockCameraToActiveTrain();
+        
     }
 
     public bool AllTrainsStopped()
@@ -36,6 +38,21 @@ public class TrainManager : MonoBehaviour {
         return allStopped;
     }
 
+    public void SetWaitingToStart(bool status)
+    {
+        waitingToStart = status;
+    }
+
+    private void Update()
+    {
+        if (AllTrainsStopped() && !waitingToStart)
+        {
+            waitingToStart = true;
+            SetupNewTrain();
+            Managers.scoreManager.UpdateScores();
+        }
+    }
+
     private void SetupNewTrain()
     {
 
@@ -46,6 +63,7 @@ public class TrainManager : MonoBehaviour {
         activeTrain = train;
         trains.Add(train);
         powerControl.GetComponent<PowerGaugeController>().ActivePowerGauge(trainPath);
+        LockCameraToActiveTrain();
     }
 
     private void ResetTrainList()

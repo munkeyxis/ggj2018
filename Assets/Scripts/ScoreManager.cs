@@ -12,14 +12,6 @@ public class ScoreManager : MonoBehaviour {
         player2Score = 0;
 	}
 
-    private void Update()
-    {
-        if(Managers.trainManager.AllTrainsStopped())
-        {
-            UpdateScores();
-        }
-    }
-
     public void UpdateScores()
     {
         player1Score = 0;

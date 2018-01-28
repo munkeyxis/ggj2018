@@ -88,6 +88,7 @@ public class TrainPath : MonoBehaviour {
             BlastOff();
             launchTrain = false;
             launchTimer = 0;
+            Managers.trainManager.SetWaitingToStart(false);
         }
 	}
 
