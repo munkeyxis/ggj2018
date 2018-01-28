@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4901599960278146}
   - component: {fileID: 114468034455621672}
+  - component: {fileID: 114015272347285884}
   m_Layer: 0
   m_Name: segment - intersection
   m_TagString: Untagged
@@ -120,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4832072502088256}
   - component: {fileID: 212242282092362598}
+  - component: {fileID: 114105308925873200}
   m_Layer: 0
   m_Name: target
   m_TagString: Untagged
@@ -645,6 +647,35 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114015272347285884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1176056332165682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaa31f0829234122a3fe51a9d392d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left_target: {fileID: 1429719229287002}
+  right_target: {fileID: 1682509300523738}
+  intersectionTarget: {fileID: 1506954803151642}
+  signalLightsController: {fileID: 114311638661954194}
+--- !u!114 &114105308925873200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506954803151642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c23b3f5752393d4aa9971095c3079ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisTarget: {fileID: 0}
+  nextTarget: {fileID: 0}
+  noTarget: 0
 --- !u!114 &114311638661954194
 MonoBehaviour:
   m_ObjectHideFlags: 1

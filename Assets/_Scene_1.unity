@@ -152,11 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114399196940393194, guid: fc2694ad67085c44296af87e1a1f3669,
-        type: 2}
-      propertyPath: switchButton
-      value: 
-      objectReference: {fileID: 246556617}
     - target: {fileID: 114313408587953806, guid: fc2694ad67085c44296af87e1a1f3669,
         type: 2}
       propertyPath: nextTarget
@@ -167,6 +162,11 @@ Prefab:
       propertyPath: nextTarget
       value: 
       objectReference: {fileID: 1564767726}
+    - target: {fileID: 114399196940393194, guid: fc2694ad67085c44296af87e1a1f3669,
+        type: 2}
+      propertyPath: switchButton
+      value: 
+      objectReference: {fileID: 246556617}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc2694ad67085c44296af87e1a1f3669, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +822,11 @@ Prefab:
     - target: {fileID: 1887011852055208, guid: e726fc20caace1c428b57a27be7ad4e4, type: 2}
       propertyPath: m_Name
       value: rail - target (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464713398771820, guid: e726fc20caace1c428b57a27be7ad4e4,
+        type: 2}
+      propertyPath: noTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e726fc20caace1c428b57a27be7ad4e4, type: 2}
