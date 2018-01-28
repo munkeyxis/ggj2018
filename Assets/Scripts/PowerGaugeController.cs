@@ -23,7 +23,7 @@ public class PowerGaugeController : MonoBehaviour {
 		power_up_sound = false;
 		power_click = false;
 
-	}
+    }
 	
 	void Update() 
 	{
@@ -66,8 +66,9 @@ public class PowerGaugeController : MonoBehaviour {
 			trainPath.power = power_gauge.fillAmount * 1500;
             trainPath.moving = true;
             gameObject.SetActive(false);
-			
-		}
+            power_click = false;
+
+        }
 
 	}
 
@@ -75,5 +76,6 @@ public class PowerGaugeController : MonoBehaviour {
 	{
 		trainPath = train;
 		gameObject.SetActive(true);
+        power_gauge.fillAmount = 0;
 	}
 }
