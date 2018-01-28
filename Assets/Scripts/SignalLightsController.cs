@@ -1,35 +1,38 @@
 ﻿using UnityEngine;
 
 public class SignalLightsController : MonoBehaviour {
-    public SpriteRenderer[] leftSignalLights;
-    public SpriteRenderer[] rightSignalLights;
+    public Animator[] leftSignalLights;
+    public Animator[] rightSignalLights;
     public Sprite inactiveLight;
     public Sprite activeLight;
+
+    //Animator light_animator;
+
 
     public void SetLightOn(bool rightLightsOn)
     {
         if (rightLightsOn)
         {
-            foreach (SpriteRenderer renderer in rightSignalLights)
+            foreach (Animator light_animator in rightSignalLights)
             {
-                renderer.sprite = activeLight;
+                light_animator.SetBool("is_flashing", false);
             }
 
-            foreach (SpriteRenderer renderer in leftSignalLights)
+            foreach (Animator light_animator in leftSignalLights)
             {
-                renderer.sprite = inactiveLight;
+                light_animator.SetBool("is_flashing", true);
             }
         }
         else
         {
-            foreach (SpriteRenderer renderer in rightSignalLights)
+            foreach (Animator light_animator in rightSignalLights)
             {
-                renderer.sprite = inactiveLight;
+                light_animator.SetBool("is_flashing", false);
             }
 
-            foreach (SpriteRenderer renderer in leftSignalLights)
+            foreach (Animator light_animator in leftSignalLights)
             {
-                renderer.sprite = activeLight;
+                light_animator.SetBool("is_flashing", true);
             }
         }
     }
