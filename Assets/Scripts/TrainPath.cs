@@ -19,13 +19,12 @@ public class TrainPath : MonoBehaviour {
 
     private GameObject targetGameObject;
     private bool launchTrain;
-    private bool trainLaunched;
+    private int launchTimer = 0;
 
 	void Start () {
         targetGameObject = initialTarget;
 		moving = false;
         launchTrain = false;
-        trainLaunched = false;
 		power_time = false;
 		train_sound_bool = false;
 	}
@@ -50,14 +49,17 @@ public class TrainPath : MonoBehaviour {
 				GetComponent<AudioSource>().Play();
 				train_sound_bool = true;
         	}
-        	
 
-            if(transform.position == targetGameObject.transform.position)
+            Vector2 pos = Vector2.MoveTowards(transform.position, targetGameObject.transform.position, speed * Time.deltaTime);
+            GetComponent<Rigidbody2D>().MovePosition(pos);
+
+            if (transform.position == targetGameObject.transform.position)
             {
                 if(!targetGameObject.GetComponent<TargetOptions>().noTarget)
                 {
                     targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
                     LookAtTarget();
+
                 }
                 else
                 {
@@ -66,8 +68,7 @@ public class TrainPath : MonoBehaviour {
                 }
             }
 
-            Vector2 pos = Vector2.MoveTowards(transform.position, targetGameObject.transform.position, speed * Time.deltaTime);
-            GetComponent<Rigidbody2D>().MovePosition(pos);
+            
             
         }
     }
@@ -79,8 +80,14 @@ public class TrainPath : MonoBehaviour {
 
         if(launchTrain)
         {
+            launchTimer++;
+            
+        }
+        if(launchTimer >= 2)
+        {
             BlastOff();
             launchTrain = false;
+            launchTimer = 0;
         }
 	}
 
@@ -95,7 +102,6 @@ public class TrainPath : MonoBehaviour {
     {
         Debug.Log("Blast Off! Power of: " + power);
         GetComponent<Rigidbody2D>().AddForce(transform.up * power);
-        trainLaunched = true;
     }
 
     private void LookAtTarget()

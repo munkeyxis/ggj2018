@@ -46,7 +46,7 @@ public class PowerGaugeController : MonoBehaviour {
 
 			Debug.Log("Now Power click is" + power_click);
 			power_up_time = false;
-			trainPath.power = power_gauge.fillAmount * 50;
+			trainPath.power = power_gauge.fillAmount * 200;
             trainPath.moving = true;
 
             gameObject.SetActive(false);
@@ -63,7 +63,7 @@ public class PowerGaugeController : MonoBehaviour {
 		{
 
 			power_up_time = false;
-			trainPath.power = power_gauge.fillAmount * 50;
+			trainPath.power = power_gauge.fillAmount * 200;
             trainPath.moving = true;
             gameObject.SetActive(false);
 			
