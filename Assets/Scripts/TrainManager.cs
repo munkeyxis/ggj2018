@@ -28,7 +28,6 @@ public class TrainManager : MonoBehaviour {
         foreach (GameObject train in trains)
         {
             float speed = train.GetComponent<Rigidbody2D>().velocity.magnitude;
-            Debug.Log("speed: " + speed);
             if (speed > 0.04)
             {
                 allStopped = false;
