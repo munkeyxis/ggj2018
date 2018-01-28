@@ -49,6 +49,7 @@ public class TrainManager : MonoBehaviour {
             waitingToStart = true;
             SetupNewTrain();
             Managers.scoreManager.UpdateScores();
+            ResetDragForTrains();
         }
     }
 
@@ -74,5 +75,13 @@ public class TrainManager : MonoBehaviour {
     {
         mainCamera.transform.SetParent(activeTrain.transform);
         mainCamera.transform.localPosition = cameraPositionOffset;
+    }
+
+    private void ResetDragForTrains()
+    {
+        foreach(GameObject train in trains)
+        {
+            train.GetComponent<Rigidbody2D>().drag = 1;
+        }
     }
 }
