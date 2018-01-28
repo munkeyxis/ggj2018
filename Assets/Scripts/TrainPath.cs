@@ -54,6 +54,7 @@ public class TrainPath : MonoBehaviour {
 
             Vector2 pos = Vector2.MoveTowards(transform.position, targetGameObject.transform.position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
+            LookAtTarget();
         }
     }
 		
@@ -69,4 +70,17 @@ public class TrainPath : MonoBehaviour {
 			targetGameObject = other.GetComponent<IntersectionController>().GetNextTarget();
         }
 	}
+
+    private void LookAtTarget()
+    {
+        Vector3 targ = targetGameObject.transform.position;
+        targ.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        targ.x = targ.x - objectPos.x;
+        targ.y = targ.y - objectPos.y;
+
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+    }
 }
