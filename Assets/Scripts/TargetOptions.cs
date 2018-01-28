@@ -3,9 +3,9 @@
 public class TargetOptions : MonoBehaviour {
     public SegmentController nextSegment;
 
-    public Vector3 GetNextSegmentTargetPos()
+    public GameObject GetNextSegmentTarget()
     {
-        return nextSegment.endTarget.position;
+        return nextSegment.endTarget;
     }
 	
 }

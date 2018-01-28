@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
 public class SegmentController : MonoBehaviour {
-    public Transform endTarget;
+    public GameObject endTarget;
 }

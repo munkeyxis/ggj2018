@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class TrainPath : MonoBehaviour {
 
-    public Transform initialTarget;
+    public GameObject initialTarget;
 	public float speed;
 	public float rotate_speed;
 	public float power;
@@ -14,11 +14,10 @@ public class TrainPath : MonoBehaviour {
 	public bool moving;
 	public bool power_time;
 
-    private Vector3 targetPosition;
-    private Vector3 nextSegmentTargetPosition;
+    private GameObject targetGameObject;
 
 	void Awake () {
-        targetPosition = initialTarget.position;
+        targetGameObject = initialTarget;
 		moving = false;
 		power_time = false;
 	}
@@ -36,12 +35,12 @@ public class TrainPath : MonoBehaviour {
 
         if (moving == true)
         {
-            if(transform.position == targetPosition)
+            if(transform.position == targetGameObject.transform.position)
             {
-                targetPosition = nextSegmentTargetPosition;
+                targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
             }
 
-            Vector2 pos = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            Vector2 pos = Vector2.MoveTowards(transform.position, targetGameObject.transform.position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
         }
     }
@@ -57,8 +56,7 @@ public class TrainPath : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 
 		if(other.GetComponent<IntersectionController>()){
-			targetPosition = other.GetComponent<IntersectionController>().GetNextTarget();
-            nextSegmentTargetPosition = other.GetComponent<IntersectionController>().GetNextSegmentTarget();
+			targetGameObject = other.GetComponent<IntersectionController>().GetNextTarget();
         }
 	}
 

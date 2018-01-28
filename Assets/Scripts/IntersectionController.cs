@@ -2,12 +2,9 @@
 
 public class IntersectionController : MonoBehaviour {
 
-	public Transform left_target;
-	public Transform right_target;
+	public GameObject left_target;
+	public GameObject right_target;
     public SignalLightsController signalLightsController;
-
-    private Vector3 leftTargetPos;
-    private Vector3 rightTargetPos;
 
 	private bool going_right;
 
@@ -18,27 +15,11 @@ public class IntersectionController : MonoBehaviour {
 		going_right_num = Random.Range(0,1);
 		going_right = going_right_num == 0 ? false : true;
         signalLightsController.SetLightOn(going_right);
-        leftTargetPos = left_target.position;
-        rightTargetPos = right_target.position;
 	}
 	
-	public Vector3 GetNextTarget(){
-
-		Vector3 nextTarget = going_right ? rightTargetPos : leftTargetPos;
-		return nextTarget;
+	public GameObject GetNextTarget(){
+		return going_right ? right_target : left_target;
 	}
-
-    public Vector3 GetNextSegmentTarget()
-    {
-        TargetOptions targetOptions = left_target.GetComponent<TargetOptions>();
-
-        if(going_right)
-        {
-            targetOptions = right_target.GetComponent<TargetOptions>();
-        }
-       
-        return targetOptions.GetNextSegmentTargetPos();
-    }
 
     public void ToggleTarget()
     {
