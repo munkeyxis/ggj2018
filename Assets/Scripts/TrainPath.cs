@@ -45,8 +45,6 @@ public class TrainPath : MonoBehaviour {
         }
     }
 		
-	
-
 	void FixedUpdate(){
 		if(moving == false && Input.GetKeyDown(KeyCode.Space)){
 			moving = true;
@@ -59,6 +57,4 @@ public class TrainPath : MonoBehaviour {
 			targetGameObject = other.GetComponent<IntersectionController>().GetNextTarget();
         }
 	}
-
-
 }
