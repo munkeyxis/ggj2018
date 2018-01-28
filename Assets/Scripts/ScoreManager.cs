@@ -25,7 +25,6 @@ public class ScoreManager : MonoBehaviour {
         }
 
         player1ScoreText.text = "Player 1: " + player1Score.ToString();
-        player2ScoreText.text = "Player 2: " + player2Score.ToString();
     }
 
     private void AddScoreBasedOnZone(ZoneSize zone)
