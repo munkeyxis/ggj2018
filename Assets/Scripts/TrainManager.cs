@@ -19,6 +19,23 @@ public class TrainManager : MonoBehaviour {
         LockCameraToActiveTrain();
     }
 
+    public bool AllTrainsStopped()
+    {
+        bool allStopped = true;
+
+        foreach (GameObject train in trains)
+        {
+            float speed = train.GetComponent<Rigidbody2D>().velocity.magnitude;
+            Debug.Log("speed: " + speed);
+            if (speed > 0.04)
+            {
+                allStopped = false;
+            }
+        }
+
+        return allStopped;
+    }
+
     private void SetupNewTrain()
     {
 
