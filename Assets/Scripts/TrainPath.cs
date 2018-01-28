@@ -72,9 +72,9 @@ public class TrainPath : MonoBehaviour {
     }
 		
 	void FixedUpdate(){
-		if(moving == false && Input.GetKeyDown(KeyCode.Space) && !trainLaunched){
+		/*if(moving == false && Input.GetKeyDown(KeyCode.Space) && !trainLaunched){
 			moving = true;
-		}
+		}*/
 
         if(launchTrain)
         {
