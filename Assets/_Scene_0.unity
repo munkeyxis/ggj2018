@@ -210,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbaa31f0829234122a3fe51a9d392d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left_target: {fileID: 1318974355}
-  right_target: {fileID: 660681300}
+  left_target: {fileID: 1318974354}
+  right_target: {fileID: 660681299}
   signalLightsController: {fileID: 294806870}
 --- !u!61 &108563615
 BoxCollider2D:
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a536af1d031d4ae4bd811bca2a62cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTarget: {fileID: 109093235}
+  initialTarget: {fileID: 66158762}
   speed: 4
   rotate_speed: 10
   power: 100

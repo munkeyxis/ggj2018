@@ -15,12 +15,12 @@ public class SignalLightsController : MonoBehaviour {
         {
             foreach (Animator light_animator in rightSignalLights)
             {
-                light_animator.SetBool("is_flashing", false);
+                light_animator.SetBool("is_flashing", true);
             }
 
             foreach (Animator light_animator in leftSignalLights)
             {
-                light_animator.SetBool("is_flashing", true);
+                light_animator.SetBool("is_flashing", false);
             }
         }
         else
