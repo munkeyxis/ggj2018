@@ -2,6 +2,7 @@
 
 public class TargetOptions : MonoBehaviour {
     public SegmentController nextSegment;
+    public bool noTarget;
 
     public GameObject GetNextSegmentTarget()
     {

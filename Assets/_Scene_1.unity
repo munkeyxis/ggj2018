@@ -379,6 +379,16 @@ Prefab:
       propertyPath: initialTarget
       value: 
       objectReference: {fileID: 1065407249}
+    - target: {fileID: 50368684897179724, guid: 155d500b8094c1148b2f2876cb920a59,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114851506694514474, guid: 155d500b8094c1148b2f2876cb920a59,
+        type: 2}
+      propertyPath: power
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 155d500b8094c1148b2f2876cb920a59, type: 2}
   m_IsPrefabParent: 0
@@ -855,6 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSegment: {fileID: 0}
+  noTarget: 1
 --- !u!212 &1504079991
 SpriteRenderer:
   m_ObjectHideFlags: 0

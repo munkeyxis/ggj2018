@@ -18,10 +18,14 @@ public class TrainPath : MonoBehaviour {
 	public AudioClip steam_train;
 
     private GameObject targetGameObject;
+    private bool launchTrain;
+    private bool trainLaunched;
 
 	void Awake () {
         targetGameObject = initialTarget;
 		moving = false;
+        launchTrain = false;
+        trainLaunched = false;
 		power_time = false;
 		train_sound_bool = false;
 	}
@@ -49,19 +53,34 @@ public class TrainPath : MonoBehaviour {
 
             if(transform.position == targetGameObject.transform.position)
             {
-                targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
+                if(!targetGameObject.GetComponent<TargetOptions>().noTarget)
+                {
+                    targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
+                    LookAtTarget();
+                }
+                else
+                {
+                    moving = false;
+                    launchTrain = true;
+                }
             }
 
             Vector2 pos = Vector2.MoveTowards(transform.position, targetGameObject.transform.position, speed * Time.deltaTime);
             GetComponent<Rigidbody2D>().MovePosition(pos);
-            LookAtTarget();
+            
         }
     }
 		
 	void FixedUpdate(){
-		if(moving == false && Input.GetKeyDown(KeyCode.Space)){
+		if(moving == false && Input.GetKeyDown(KeyCode.Space) && !trainLaunched){
 			moving = true;
 		}
+
+        if(launchTrain)
+        {
+            BlastOff();
+            launchTrain = false;
+        }
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -70,6 +89,13 @@ public class TrainPath : MonoBehaviour {
 			targetGameObject = other.GetComponent<IntersectionController>().GetNextTarget();
         }
 	}
+
+    private void BlastOff()
+    {
+        Debug.Log("Blast Off! Power of: " + power);
+        GetComponent<Rigidbody2D>().AddForce(transform.up * power);
+        trainLaunched = true;
+    }
 
     private void LookAtTarget()
     {
