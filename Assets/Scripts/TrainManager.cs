@@ -75,6 +75,7 @@ public class TrainManager : MonoBehaviour {
     {
         mainCamera.transform.SetParent(activeTrain.transform);
         mainCamera.transform.localPosition = cameraPositionOffset;
+        mainCamera.transform.localRotation = Quaternion.identity;
     }
 
     private void ResetDragForTrains()
