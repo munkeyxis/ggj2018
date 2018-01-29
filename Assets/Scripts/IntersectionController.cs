@@ -1,29 +1,22 @@
 ﻿using UnityEngine;
 
-public class IntersectionController : MonoBehaviour {
-
-	public GameObject left_target;
-	public GameObject right_target;
-    public GameObject intersectionTarget;
+public class IntersectionController : MonoBehaviour
+{
+    public TargetOptions left_target;
+    public TargetOptions right_target;
+    public TargetOptions intersectionTarget;
     public SignalLightsController signalLightsController;
 
-	private bool going_right;
-    private GameObject selectedTarget;
+    private bool going_right;
 
-	// Use this for initialization
-	void Start () {
-
-		int going_right_num;
-		going_right_num = Random.Range(0,2);
-		going_right = going_right_num == 0 ? false : true;
+    void Start()
+    {
+        int going_right_num;
+        going_right_num = Random.Range(0, 2);
+        going_right = going_right_num == 0 ? false : true;
         signalLightsController.SetLightOn(going_right);
         SetSelectedTarget();
-        intersectionTarget.GetComponent<TargetOptions>().nextTarget = selectedTarget.GetComponent<TargetOptions>();
-	}
-	
-	public GameObject GetNextTarget(){
-		return going_right ? right_target : left_target;
-	}
+    }
 
     public void ToggleTarget()
     {
@@ -35,12 +28,11 @@ public class IntersectionController : MonoBehaviour {
 
     private void SetSelectedTarget()
     {
-        selectedTarget = left_target;
+        intersectionTarget.nextTarget = left_target;
 
-        if(going_right)
+        if (going_right)
         {
-            selectedTarget = right_target;
+            intersectionTarget.nextTarget = right_target;
         }
     }
-
 }

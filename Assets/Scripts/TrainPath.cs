@@ -31,20 +31,10 @@ public class TrainPath : MonoBehaviour {
 
     void Update()
     {
-
-        //speed -= 1 * Time.deltaTime;
-
-        /*Vector2 rotate_direction = target[current].position - transform.position;
-		float angle = Mathf.Atan2(rotate_direction.y, rotate_direction.x) * Mathf.Rad2Deg;
-		Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-		transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotate_speed * Time.deltaTime);*/
-
-
         if (moving == true)
         {
         	if(train_sound_bool == false && speed > 0)
         	{
-
         		GetComponent<AudioSource>().clip = steam_train;
 				GetComponent<AudioSource>().Play();
 				train_sound_bool = true;
@@ -59,7 +49,6 @@ public class TrainPath : MonoBehaviour {
                 {
                     targetGameObject = targetGameObject.GetComponent<TargetOptions>().GetNextSegmentTarget();
                     LookAtTarget();
-
                 }
                 else
                 {
@@ -67,17 +56,11 @@ public class TrainPath : MonoBehaviour {
                     launchTrain = true;
                 }
             }
-
-            
-            
         }
     }
 		
-	void FixedUpdate(){
-		/*if(moving == false && Input.GetKeyDown(KeyCode.Space) && !trainLaunched){
-			moving = true;
-		}*/
-
+	void FixedUpdate()
+    {
         if(launchTrain)
         {
             launchTimer++;
@@ -89,13 +72,6 @@ public class TrainPath : MonoBehaviour {
             launchTrain = false;
             launchTimer = 0;
             Managers.trainManager.SetWaitingToStart(false);
-        }
-	}
-
-	void OnTriggerEnter2D(Collider2D other){
-
-		if(other.GetComponent<IntersectionController>()){
-			targetGameObject = other.GetComponent<IntersectionController>().GetNextTarget();
         }
 	}
 
