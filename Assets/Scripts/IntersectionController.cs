@@ -8,7 +8,6 @@ public class IntersectionController : MonoBehaviour
     private TargetOptions intersectionTarget;
     private SignalLightsController signalLightsController;
 
-
     void Start()
     {
         int going_right_num;
