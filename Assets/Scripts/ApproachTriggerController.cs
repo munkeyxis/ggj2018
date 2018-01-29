@@ -4,13 +4,16 @@ using UnityEngine.UI;
 public class ApproachTriggerController : MonoBehaviour {
 
     public IntersectionController intersectionController;
-    public Button switchButton;
-
     public AudioClip crossing_bell;
+    private Button switchButton;
+
+    private void Start()
+    {
+        switchButton = Managers.uiManager.switchButton;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         switchButton.gameObject.SetActive(true);
         switchButton.GetComponent<SwitchButtonController>().SetIntersectionController(intersectionController);
 
@@ -18,7 +21,6 @@ public class ApproachTriggerController : MonoBehaviour {
         GetComponent<AudioSource>().Play();
         // start sound
         // start lights
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)

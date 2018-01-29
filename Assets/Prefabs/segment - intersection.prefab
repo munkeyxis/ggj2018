@@ -416,7 +416,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176056332165682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.78999996, y: -3.8199997, z: 0}
+  m_LocalPosition: {x: -0.01774919, y: -0.2917571, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4832072502088256}
@@ -532,7 +532,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisTarget: {fileID: 0}
   nextTarget: {fileID: 0}
-  noTarget: 0
+  noTarget: 1
 --- !u!114 &114330840842967912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisTarget: {fileID: 0}
   nextTarget: {fileID: 0}
-  noTarget: 0
+  noTarget: 1
 --- !u!114 &114399196940393194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -736,8 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f6fe621166bf3478174e6e1d694a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intersectionController: {fileID: 0}
-  switchButton: {fileID: 0}
+  intersectionController: {fileID: 114015272347285884}
   crossing_bell: {fileID: 8300000, guid: e65539fc4837c49ad8dcb9f1b808e036, type: 3}
 --- !u!114 &114468034455621672
 MonoBehaviour:
