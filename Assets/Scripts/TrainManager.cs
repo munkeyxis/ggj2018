@@ -94,6 +94,7 @@ public class TrainManager : MonoBehaviour
         else
         {
             trainScoreController.isPlayer1 = false;
+            trainScoreController.GetComponent<SpriteRenderer>().color = Color.cyan;
         }
     }
 }
