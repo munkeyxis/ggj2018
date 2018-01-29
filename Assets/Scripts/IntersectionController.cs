@@ -4,14 +4,16 @@ public class IntersectionController : MonoBehaviour
 {
     public TargetOptions left_target;
     public TargetOptions right_target;
-    public SignalLightsController signalLightsController;
     private bool going_right;
     private TargetOptions intersectionTarget;
+    private SignalLightsController signalLightsController;
+
 
     void Start()
     {
         int going_right_num;
         intersectionTarget = GetComponentInChildren<TargetOptions>();
+        signalLightsController = GetComponentInChildren<SignalLightsController>();
         going_right_num = Random.Range(0, 2);
         going_right = going_right_num == 0 ? false : true;
         signalLightsController.SetLightOn(going_right);
