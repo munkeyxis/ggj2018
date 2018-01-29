@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class TrainController : MonoBehaviour {
-
+public class TrainController : MonoBehaviour
+{
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(Managers.trainManager.activeTrain == gameObject)
+        if (Managers.trainManager.activeTrain == gameObject)
         {
             Rigidbody2D thisRB = GetComponent<Rigidbody2D>();
             float currentForce = thisRB.velocity.magnitude;
@@ -12,6 +12,5 @@ public class TrainController : MonoBehaviour {
             thisRB.drag = 4;
             Debug.Log("collision " + currentForce);
         }
-        
     }
 }
