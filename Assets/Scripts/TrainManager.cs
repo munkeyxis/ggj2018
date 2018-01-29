@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class TrainManager : MonoBehaviour {
-
+public class TrainManager : MonoBehaviour
+{
     public Vector3 cameraPositionOffset;
     public GameObject trainPrefab;
     public GameObject startTarget;
@@ -18,7 +18,6 @@ public class TrainManager : MonoBehaviour {
         waitingToStart = true;
         ResetTrainList();
         SetupNewTrain();
-        
     }
 
     public bool AllTrainsStopped()
@@ -55,7 +54,6 @@ public class TrainManager : MonoBehaviour {
 
     private void SetupNewTrain()
     {
-
         GameObject train = Instantiate(trainPrefab);
         TrainPath trainPath = train.GetComponent<TrainPath>();
         train.transform.position = startTarget.transform.position;
@@ -80,7 +78,7 @@ public class TrainManager : MonoBehaviour {
 
     private void ResetDragForTrains()
     {
-        foreach(GameObject train in trains)
+        foreach (GameObject train in trains)
         {
             train.GetComponent<Rigidbody2D>().drag = 1;
         }
