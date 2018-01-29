@@ -56,6 +56,7 @@ public class TrainManager : MonoBehaviour
     {
         GameObject train = Instantiate(trainPrefab);
         TrainPath trainPath = train.GetComponent<TrainPath>();
+        AssignTrainOwnershipToPlayer(train.GetComponent<TrainScoreController>());
         train.transform.position = startTarget.transform.position;
         trainPath.initialTarget = initialTarget;
         activeTrain = train;
@@ -81,6 +82,18 @@ public class TrainManager : MonoBehaviour
         foreach (GameObject train in trains)
         {
             train.GetComponent<Rigidbody2D>().drag = 1;
+        }
+    }
+
+    private void AssignTrainOwnershipToPlayer(TrainScoreController trainScoreController)
+    {
+        if(trains.Count == 0 || !trains[trains.Count - 1].GetComponent<TrainScoreController>().isPlayer1)
+        {
+            trainScoreController.isPlayer1 = true;
+        }
+        else
+        {
+            trainScoreController.isPlayer1 = false;
         }
     }
 }

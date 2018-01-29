@@ -21,13 +21,15 @@ public class ScoreManager : MonoBehaviour {
         {
             TrainScoreController trainScoreController = train.GetComponent<TrainScoreController>();
             ZoneSize bestZone = trainScoreController.GetBestZone();
-            AddScoreBasedOnZone(bestZone);
+            int trainValue = GetValueBasedOnZone(bestZone);
+            AddValueToPlayerScore(train, trainValue);
         }
 
         player1ScoreText.text = "Player 1: " + player1Score.ToString();
+        player2ScoreText.text = "Player 2: " + player2Score.ToString();
     }
 
-    private void AddScoreBasedOnZone(ZoneSize zone)
+    private int GetValueBasedOnZone(ZoneSize zone)
     {
         int zoneValue = 0;
         switch (zone)
@@ -46,6 +48,18 @@ public class ScoreManager : MonoBehaviour {
                 break;
         }
 
-        player1Score += zoneValue;
+        return zoneValue;
+    }
+    
+    private void AddValueToPlayerScore(GameObject train, int value)
+    {
+        if(train.GetComponent<TrainScoreController>().isPlayer1)
+        {
+            player1Score += value;
+        }
+        else
+        {
+            player2Score += value;
+        }
     }
 }

@@ -4,6 +4,7 @@ public class TrainScoreController : MonoBehaviour {
     public bool inLargeZone { get; private set; }
     public bool inMediumZone { get; private set; }
     public bool inSmallZone { get; private set; }
+    public bool isPlayer1;
 
     void Start () {
         inLargeZone = false;
